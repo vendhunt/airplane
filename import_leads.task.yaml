@@ -1,6 +1,10 @@
 slug: import_leads
 name: import_leads
-
+parameters:
+  - name: lead_file
+    slug: lead_file
+    type: file
+    description: The file exported from D7 (must be a  CSV)
 python:
   entrypoint: import_leads.py
   
