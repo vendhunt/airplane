@@ -11,7 +11,6 @@ def main(params):
   subject = 'Howdy Alex!'
 
 
-
   # thread_id, msg_id, msg2 = gm.sendMail(email, msg, subject,
   #                                     service, html=True, sender="Alex Breen<alex@bnbuyer.com>")
   # print(thread_id), 
