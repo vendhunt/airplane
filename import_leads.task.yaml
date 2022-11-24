@@ -3,7 +3,7 @@ name: import_leads
 parameters:
 - slug: lead_file
   name: lead_file
-  type: shorttext
+  type: file
   description: The user's name.
   required: true
 python:
