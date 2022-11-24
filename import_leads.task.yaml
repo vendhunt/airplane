@@ -4,7 +4,7 @@ parameters:
 - slug: lead_file
   name: lead_file
   type: upload
-  description: The user's name.
+  description: The lead file from D7
   required: true
 python:
   entrypoint: import_leads.py
