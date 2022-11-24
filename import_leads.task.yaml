@@ -1,5 +1,5 @@
-slug: github_test
-name: github_test
+slug: import_leads
+name: import_leads
 parameters:
 - slug: lead_file
   name: Lead File
