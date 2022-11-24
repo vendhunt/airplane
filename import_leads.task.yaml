@@ -11,7 +11,5 @@ parameters:
     description: The file exported from D7 (must be a  CSV)
 python:
   entrypoint: import_leads.py
-
-
       
 timeout: 43199
