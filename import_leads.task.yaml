@@ -1,8 +1,8 @@
 slug: import_leads
 name: import_leads
 parameters:
-- slug: name
-  name: Name
+- slug: lead_file
+  name: lead_file
   type: shorttext
   description: The user's name.
   default: Alfred Pennyworth
