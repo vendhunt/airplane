@@ -1,5 +1,5 @@
-slug: import_leads
-name: import_leads
+slug: d7importer
+name: d7importer
 parameters:
 - slug: lead_file
   name: lead_file
