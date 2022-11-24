@@ -1,0 +1,17 @@
+slug: github_test
+name: github_test
+parameters:
+- slug: name
+  name: Name
+  type: shorttext
+  description: The user's name.
+  default: Alfred Pennyworth
+  required: false
+  options:
+  - Alfred Pennyworth
+  - Bruce Wayne
+python:
+  entrypoint: import_leads.py
+  
+
+timeout: 43200
