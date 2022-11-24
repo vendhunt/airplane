@@ -1,0 +1,8 @@
+slug: import_leads
+name: import_leads
+
+python:
+  entrypoint: import_leads.py
+  
+
+timeout: 43200
