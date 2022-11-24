@@ -1,0 +1,17 @@
+slug: import_leads
+name: import_leads
+parameters:
+  - name: Vendor City
+    slug: vendor_city
+    type: shorttext
+    description: The city that was used in the D7 search
+  - name: Lead File
+    slug: lead_file
+    type: file
+    description: The file exported from D7 (must be a  CSV)
+python:
+  entrypoint: import_leads.py
+
+
+      
+timeout: 43199
