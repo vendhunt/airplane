@@ -1,0 +1,15 @@
+slug: get_leads
+name: get_leads
+python:
+  entrypoint: get_leads.py
+  envVars:
+    db_user:
+      config: db_user
+    db_pass:
+      config: db_pass
+    db_host:
+      config: db_host
+    d7key:
+      config: d7key
+
+timeout: 43200
