@@ -1,5 +1,6 @@
 def query(q, get_row_id = False, qtype = 'select', row_count = False):
     import mysql.connector
+    import os
 
     db_user = os.environ.get('db_user')
     db_pass = os.environ.get('db_pass')
