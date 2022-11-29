@@ -100,9 +100,6 @@ def search_city(camp):
     return outputs
 
 def select_campaigns():
-    airtable_key = os.environ.get('airtable_key')
-    base_id = 'apprnuOZwl0l4Fysm'
-    camp_table = Table(airtable_key, base_id, 'Campaigns')
     campaigns = camp_table.all(formula=match({'Status':'Active'}))
 
     #query to find out how many remaining leads each campaign has (and convert to dict so searchable)
@@ -151,6 +148,9 @@ def main(params):
     from vh_utils import query
     import time  
     
+    airtable_key = os.environ.get('airtable_key')
+    base_id = 'apprnuOZwl0l4Fysm'
+    camp_table = Table(airtable_key, base_id, 'Campaigns')    
     
     d7key = os.environ.get('d7key')
 
