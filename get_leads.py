@@ -131,16 +131,18 @@ def select_campaigns():
     return selected_camps
 
 def main(params):
+    global datetime
     global d7key
     global os 
     global time 
+    global timedelta
     global Table
     global match
     global pd 
     global requests
     global query
     
-    
+    from datetime import datetime, timedelta
     import os 
     import pandas 
     from pyairtable import Table
