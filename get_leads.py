@@ -4,6 +4,8 @@ def run_search(kw, city,camp_id):
     response = requests.get(url)
     #receive JSON with the D7 search ID and the wait time
     search = response.json()
+    if 'error' in search:
+        raise Exception('D7 Erorr: '+ search['error'])
 
     d7_id = search['searchid']
 
