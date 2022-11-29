@@ -137,6 +137,7 @@ def main(params):
     global Table
     global match
     global pd 
+    global requests
     global query
     
     
@@ -144,6 +145,7 @@ def main(params):
     import pandas 
     from pyairtable import Table
     from pyairtable.formulas import match
+    import requests
     from vh_utils import query
     import time  
     
