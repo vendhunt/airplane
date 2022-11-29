@@ -11,5 +11,7 @@ python:
       config: db_host
     d7key:
       config: d7key
+    airtable_key:
+      config: airtable_key
 
 timeout: 43200
