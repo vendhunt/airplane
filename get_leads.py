@@ -78,7 +78,7 @@ def search_city(camp):
     current_terms = camp['fields'].get('Terms Searched','')
     term_str = current_terms + term_str
     #update the record in airtable. 
-    table.update(camp['id'],{'Terms Searched':term_str})
+    camp_table.update(camp['id'],{'Terms Searched':term_str})
     
     outputs = []
     #retreive the data from the searches. 
@@ -102,8 +102,8 @@ def search_city(camp):
 def select_campaigns():
     airtable_key = os.environ.get('airtable_key')
     base_id = 'apprnuOZwl0l4Fysm'
-    table = Table(airtable_key, base_id, 'Campaigns')
-    campaigns = table.all(formula=match({'Status':'Active'}))
+    camp_table = Table(airtable_key, base_id, 'Campaigns')
+    campaigns = camp_table.all(formula=match({'Status':'Active'}))
 
     #query to find out how many remaining leads each campaign has (and convert to dict so searchable)
     q = '''
@@ -130,6 +130,7 @@ def select_campaigns():
     return selected_camps
 
 def main(params):
+    global camp_table
     global datetime
     global d7key
     global os 
