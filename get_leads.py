@@ -122,7 +122,7 @@ def select_campaigns():
         campaigns2.append(c)
 
     #sort by the number of leads left and select the first 10 campaigns. 
-    selected_camps = sorted(campaigns2, key=lambda d: d['leads_left'])[:10]
+    selected_camps = sorted(campaigns2, key=lambda d: d['leads_left'])[:3]
     
     return selected_camps
 
@@ -141,7 +141,7 @@ def main(params):
     
     from datetime import datetime, timedelta
     import os 
-    import pandas 
+    import pandas as pd 
     from pyairtable import Table
     from pyairtable.formulas import match
     import requests
