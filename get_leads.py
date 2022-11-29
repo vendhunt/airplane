@@ -4,14 +4,13 @@ def run_search(kw, city,camp_id):
     response = requests.get(url)
     #receive JSON with the D7 search ID and the wait time
     search = response.json()
-    try:
-        d7_id = search['searchid']
-    except:
-        return search
+
+    d7_id = search['searchid']
+
     
     now = datetime.now()
     q = f'''insert into searches (city, term, d7_id, search_date, campaign_id) 
-    values('{city}', '{kw}', '{d7id}', current_timestamp(),'{camp_id}')'''
+    values('{city}', '{kw}', '{d7_id}', current_timestamp(),'{camp_id}')'''
     db_searchid = query(q, get_row_id=True, qtype = 'insert')
 
     #add the database search id and the time that we can pull the search data into the dictionary
