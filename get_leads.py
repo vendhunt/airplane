@@ -117,7 +117,7 @@ def select_campaigns():
     group by 1
     '''
     camp_count = query(q)
-    camp_count_dic = {c:cnt for c,cnt in camp_leads}
+    camp_count_dic = {c:cnt for c,cnt in camp_count}
 
     #add the count of leads left to each campaign. 
     campaigns2 = []
