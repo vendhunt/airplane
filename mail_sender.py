@@ -78,8 +78,12 @@ def get_accounts():
     return accounts 
 
 def main(params):
+    global gm
+    global os
+    
     import send_gmail as gm
     import random
+    import os
     from email_templates import main_template
 
     lead_result = get_leads()
