@@ -5,6 +5,7 @@ def query(q, get_row_id = False, qtype = 'select', row_count = False):
     db_pass = os.environ.get('db_pass')
     db_host = os.environ.get('db_host')
     
+    
     cnx = mysql.connector.connect(
         host=db_host, user=db_user, passwd=db_pass, database='vhdb', port=3306)
     cursor = cnx.cursor()
