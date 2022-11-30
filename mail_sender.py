@@ -122,6 +122,8 @@ def main(params):
         del(accounts[acc])
         
     assert len(accounts) > 0 , 'No accounts with valid creds'
+    
+    counts = {camp_dict[x]['City']:0 for x in camp_dict}
 
     for lead_id, to_email, campaign_id, campaign_city in lead_result:
         
@@ -158,7 +160,8 @@ def main(params):
             thread_id, msg_id, msg2 = gm.sendMail(to_email, body, subject,
                                       sending_service, html=True, sender=f"Vending Solutions<{from_email}>")
             
-            print(f'sent email to {to_email}')
+            #print(f'sent email to {to_email}')
+            counts[campaign_city] += 1 
 
 
             q = f'''
@@ -175,3 +178,4 @@ def main(params):
                 del(accounts[sending_account])
 
             break 
+    return counts
