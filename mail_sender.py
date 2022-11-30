@@ -144,7 +144,7 @@ def main(params):
             q = f'''
             update emails 
             set 
-                thread_id = '{thread_id}'
+                thread_id = '{thread_id}',
                 msg_id = '{msg2}'
             where email_id = {email_id} '''
 
