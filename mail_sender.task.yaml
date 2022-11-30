@@ -1,0 +1,39 @@
+slug: mail_sender
+name: mail_sender
+python:
+  entrypoint: mail_sender.py
+  envVars:
+    db_user:
+      config: db_user
+    db_pass:
+      config: db_pass
+    db_host:
+      config: db_host
+    d7key:
+      config: d7key
+    airtable_key:
+      config: airtable_key
+    getvendingnow_token:
+      config: getvendingnow_token
+    getvendingnow_refresh_token:
+      config: getvendingnow_refresh_token
+    topchoicevendingmachines_token:
+      config: topchoicevendingmachines_token
+    topchoicevendingmachines_refresh_token:
+      config: topchoicevendingmachines_refresh_token
+    getavendingmachine_token:
+      config: getavendingmachine_token
+    getavendingmachine_refresh_token:
+      config: topvendingsolutions_token
+    topvendingsolutions_refresh_token:
+      config: topvendingsolutions_refresh_token
+    bestvendingmachines_token:
+      config: bestvendingmachines_token
+    bestvendingmachines_refresh_token:
+      config: bestvendingmachines_refresh_token
+    client_id:
+      config: client_id
+    client_secret:
+      config: client_secret
+
+timeout: 43200
