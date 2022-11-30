@@ -35,7 +35,5 @@ python:
       config: client_id
     client_secret:
       config: client_secret
-    sheets_key:
-      config: sheets_key
 
 timeout: 43200
