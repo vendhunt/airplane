@@ -139,7 +139,7 @@ def main(params):
         if signature_addy:
             signature_addy = signature_addy.replace('\n',' ')
             city_only = campaign_city.split(',')[0]
-            to_email = 'alexbreen7@gmail.com'
+            #to_email = 'alexbreen7@gmail.com'
             subject = f'Howdy from another {city_only} Business!'
 
             assert lead_id is not None, 'error with lead_id'
@@ -177,5 +177,5 @@ def main(params):
             if accounts[sending_account]['sent_count'] >= 250:
                 del(accounts[sending_account])
 
-            break 
+            #break 
     return counts
