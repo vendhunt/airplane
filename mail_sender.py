@@ -115,7 +115,7 @@ def main(params):
             accounts[acc]['service'] = service
             #send a test email to make sure the service actually works
             gm.sendMail('hannah@vendhunt.com', 'hello, this is a test', 'Test Email' ,
-                                      service, html=False, sender=f"Vending Solutions<{from_email}>")
+                                      service, html=False)
         except Exception as e:
             delete_accounts.append(acc)
             print(f'error for {acc}: {e}')
