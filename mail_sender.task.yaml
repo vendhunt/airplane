@@ -35,5 +35,7 @@ python:
       config: client_id
     client_secret:
       config: client_secret
+    gsheet_key:
+      config: gsheet_key
 
 timeout: 43200
