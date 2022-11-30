@@ -47,8 +47,8 @@ def get_search(d7_searchid, db_searchid):
         db_host=db_host)
     engine = create_engine(con_string)
 
-#     df.to_sql('leads', con=engine,
-#               if_exists='append', index=False)
+    df.to_sql('leads', con=engine,
+              if_exists='append', index=False)
     
     output = {
         'db_searchid': db_searchid, 
