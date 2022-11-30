@@ -127,7 +127,7 @@ def main(params):
 
     for lead_id, to_email, campaign_id, campaign_city in lead_result:
         
-        if to_email in unsub_emails:
+        if to_email in unsub:
             continue #this skips sending to the current person
             
         signature_addy = camp_dict[campaign_id].get('Address')
