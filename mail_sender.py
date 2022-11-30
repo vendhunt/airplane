@@ -178,4 +178,4 @@ def main(params):
                 del(accounts[sending_account])
 
             #break 
-    return counts
+    return [{'city':k, 'count':counts[k]} for k in counts]
