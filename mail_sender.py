@@ -113,7 +113,9 @@ def main(params):
             service = gm.setup_credentials(acc)
             assert service is not None
             accounts[acc]['service'] = service
-
+            #send a test email to make sure the service actually works
+            gm.sendMail('hannah@vendhunt.com', 'hello, this is a test', 'Test Email' ,
+                                      service, html=False, sender=f"Vending Solutions<{from_email}>")
         except Exception as e:
             delete_accounts.append(acc)
             print(f'error for {acc}: {e}')
