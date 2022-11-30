@@ -77,6 +77,22 @@ def get_accounts():
     accounts = {un:{'address':acc,'sent_count':0} for un, acc in accounts_result}
     return accounts 
 
+def get_unsub_emails():
+    #to authenticate, we have to get the key (stored as a string, and convert to a dic)
+    string_dict = os.environ.get('gsheet_key')
+    import ast
+    sheets_key = ast.literal_eval(string_dict)
+    #the key has /n in it, which broke the serializer. So I manually replaced those with "newline" although we now have to convert back for it to work
+    sheets_key['private_key'] = sheets_key['private_key'].replace('newline','\n')
+    gc = gspread.service_account_from_dict(sheets_key)
+
+    ss = gc.open_by_key('1PWukYRJ7VfNa6AejCZT1LTlAS_-MaojBeA2xGUQvKjg')
+    ws = ss.get_worksheet(0)
+    unsub_emails = [x['Email'] for x in ws.get_all_records()]
+    
+    return unsub_emails
+
+
 def main(params):
     global gm
     global os
@@ -89,6 +105,7 @@ def main(params):
     lead_result = get_leads()
     camp_dict = get_campaigns()
     accounts = get_accounts()
+    unsub = get_unsub_emails()
     
     #create a service account session for each of the emails 
     delete_accounts = []
@@ -108,6 +125,10 @@ def main(params):
     assert len(accounts) > 0 , 'No accounts with valid creds'
 
     for lead_id, to_email, campaign_id, campaign_city in lead_result:
+        
+        if to_email in unsub_emails:
+            continue
+            
         signature_addy = camp_dict[campaign_id].get('Address')
         
         sending_account = random.choice(list(accounts.keys()))
