@@ -104,7 +104,7 @@ def main(params):
     lead_result = get_leads()
     camp_dict = get_campaigns()
     accounts = get_accounts()
-    #unsub = get_unsub_emails() commenting out for now
+    unsub = [] #get_unsub_emails() commenting out for now
     
     #create a service account session for each of the emails 
     delete_accounts = []
@@ -128,7 +128,7 @@ def main(params):
     for lead_id, to_email, campaign_id, campaign_city in lead_result:
         
         if to_email in unsub_emails:
-            continue
+            continue #this skips sending to the current person
             
         signature_addy = camp_dict[campaign_id].get('Address')
         
