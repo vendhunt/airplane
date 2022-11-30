@@ -38,7 +38,9 @@ def get_search(d7_searchid, db_searchid):
     
 
     from sqlalchemy import create_engine
-
+    db_user = os.environ.get('db_user')
+    db_pass = os.environ.get('db_pass')
+    db_host = os.environ.get('db_host')
     con_string = new_string = 'mysql+pymysql://{db_user}:{db_pass}@{db_host}:3306/vhdb'.format(
         db_user=db_user,
         db_pass=db_pass,
