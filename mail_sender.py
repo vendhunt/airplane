@@ -104,7 +104,7 @@ def main(params):
     lead_result = get_leads()
     camp_dict = get_campaigns()
     accounts = get_accounts()
-    unsub = get_unsub_emails()
+    #unsub = get_unsub_emails() commenting out for now
     
     #create a service account session for each of the emails 
     delete_accounts = []
