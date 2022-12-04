@@ -1,0 +1,13 @@
+slug: lead_processing
+name: lead_processing
+python:
+  entrypoint: lead_processing.py
+  envVars:
+    db_user:
+      config: db_user
+    db_pass:
+      config: db_pass
+    db_host:
+      config: db_host
+   
+timeout: 43200
