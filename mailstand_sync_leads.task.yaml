@@ -1,0 +1,18 @@
+
+slug: mailstand_sync_leads
+name: mailstand_sync_leads
+python:
+  entrypoint: mailstand_sync_leads.py
+  envVars:
+    airtable_key:
+      config: airtable_key
+    mailstand_key:
+      config: mailstand_key
+    db_user:
+      config: db_user
+    db_pass:
+      config: db_pass
+    db_host:
+      config: db_host
+   
+timeout: 43200
