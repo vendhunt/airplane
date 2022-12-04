@@ -4,6 +4,8 @@ def main(params):
   from pyairtable import Table
   from pyairtable.formulas import match
   import requests
+  from requests.auth import HTTPBasicAuth
+
   
   #creasting output set
   output = {
@@ -19,6 +21,7 @@ def main(params):
   base_id = 'apprnuOZwl0l4Fysm'
   ms_api = os.environ.get('mailstand_key')
   workspace = 'space_RKk16IjgZXHnSVTtrbiEpw2fx'
+  auth = HTTPBasicAuth(ms_api,"") 
   
   table = Table(airtable_key, base_id, 'Campaigns')
   campaigns = table.all(formula=match({'Status':'Active'}))
