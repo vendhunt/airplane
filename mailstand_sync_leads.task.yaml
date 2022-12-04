@@ -2,7 +2,7 @@
 slug: mailstand_sync_leads
 name: mailstand_sync_leads
 python:
-  entrypoint: mailstand_sync_leads.py
+  entrypoint: mailstand_lead_sync.py
   envVars:
     airtable_key:
       config: airtable_key
