@@ -53,7 +53,7 @@ def send_to_mailstand(lead, ms_campaign):
   # the campaign needs to be added to the lead
   lead['upload_options']['campaign'] = ms_campaign
   # mostly for reporting
-  lead_id = lead['custom1']
+  lead_id = lead['custom_1']
   # the lead needs to be converted to json
   
   d = json.dumps(lead)
