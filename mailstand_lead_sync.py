@@ -93,7 +93,7 @@ def get_campaigns():
 
 def main():
   global json
-  global HTTPBasicAuth
+  global auth
   global ms_api
   global query
   global requests
