@@ -17,6 +17,7 @@ def get_leads(db_campaign_id):
   lead_result = query(q)
   leads = []
   
+  
   for l in lead_result:
     lead_id, email, business_name, phone, category, address, city, state, zipc = l
     data = {
