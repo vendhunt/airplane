@@ -1,0 +1,11 @@
+slug: sync_campaigns
+name: sync_campaigns
+python:
+  entrypoint: sync_campaigns.py
+  envVars:
+    airtable_key:
+      config: airtable_key
+    mailstand_key:
+      config: mailstand_key
+   
+timeout: 43200
