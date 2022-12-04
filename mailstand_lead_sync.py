@@ -3,7 +3,7 @@ def get_leads(db_campaign_id):
   q = f'''
   Select el.lead_id , el.email, el.business_name, el.phone, el.category, el.address, el.city, el.state, el.zip
   From searches s
-  left join email_leads el
+  inner join email_leads el
       on s.search_id  = el.search_id
   left join emails e
       on e.lead_id  = el.lead_id
@@ -68,7 +68,7 @@ def send_to_mailstand(lead, ms_campaign):
           q = f'''
           update email_leads
               set mailstand_id = '{r.json()['id']}'
-          where lead_id = lead_id
+          where lead_id = '{lead_id}'
           '''
           rcount = query(q, qtype='update', row_count=True)
 
@@ -126,8 +126,8 @@ def main():
     # if there aren't any new leads, skip this campaign. 
     if len(leads) == 0:
       continue 
-    for lead in leads:
-      lead_id = lead['custom1']
+    for lead in leads[:10]:
+      lead_id = lead['custom_1']
       try:
         send_to_mailstand(lead, camp['Mailstand Campaign ID'])
         output['new_leads'].append(lead_id)
