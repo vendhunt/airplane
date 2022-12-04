@@ -29,7 +29,7 @@ def main(params):
 
   errors = []
   sucess = []
-  for c in campaigns[:15]:
+  for c in campaigns:
       try:
           #if the campaign already has a mailstand ID skip it. 
           ms_cid = c['fields'].get('Mailstand Campaign ID')
