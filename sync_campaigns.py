@@ -5,6 +5,7 @@ def main(params):
   from pyairtable.formulas import match
   import requests
   from requests.auth import HTTPBasicAuth
+  import time
 
   
   #creasting output set
