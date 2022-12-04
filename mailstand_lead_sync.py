@@ -62,8 +62,6 @@ def send_to_mailstand(lead, ms_campaign):
   r = requests.post(url=url, data=d, headers=headers, auth=auth)
 
   if r.status_code in [200, 201]:
-      output['new_leads'].append(lead_id)
-      # update the database_id with the users campaign id
       try:
           q = f'''
           update email_leads
