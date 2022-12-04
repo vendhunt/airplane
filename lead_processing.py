@@ -1,7 +1,7 @@
 def main(params):
     from vh_utils import query 
     email_sync = '''
-    Insert into email_leads 
+    Insert into email_leads (lead_id, search_id, business_name, phone, email, category, address, city, state, zip )
     With to_import as (
     Select *, ROW_NUMBER() over (PARTITION BY email order by lead_id) as duplicate_email
     From leads 
@@ -10,13 +10,14 @@ def main(params):
     ) 
     Select lead_id, search_id, business_name, phone, email, category, address, city, state, zip 
     from to_import 
-    where duplicate_email =1 '''
+    where duplicate_email =1 
+    '''
 
 
     email_count = query(email_sync, row_count=True, qtype='insert')
     
     phone_sync = '''
-    Insert into  phone_leads
+    Insert into  phone_leads (lead_id, search_id, business_name, phone, email, category, address, city, state, zip )
     With to_import as (
     Select *, ROW_NUMBER() over (PARTITION BY phone order by lead_id) as duplicate_phone
     From leads 
