@@ -19,6 +19,7 @@ def main(params):
   ms_api = os.environ.get('mailstand_key')
   workspace = 'space_RKk16IjgZXHnSVTtrbiEpw2fx'
   
+  table = Table(airtable_key, base_id, 'Campaigns')
   campaigns = table.all(formula=match({'Status':'Active'}))
 
   errors = []
