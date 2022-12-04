@@ -1,5 +1,6 @@
 slug: lead_processing
 name: lead_processing
+description: The output of get_leads simply inputs all leads into the database. This task loads those into the email_leads and phone_leads tables that handle deduplication. 
 python:
   entrypoint: lead_processing.py
   envVars:
