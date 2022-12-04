@@ -114,6 +114,7 @@ def main():
   workspace = 'space_RKk16IjgZXHnSVTtrbiEpw2fx'
 
   output = {
+    'summary':{},
     'new_leads':[],
     'db_failures':[],
     'api_errors':[],
@@ -129,7 +130,7 @@ def main():
     for lead in leads[:10]:
       lead_id = lead['custom_1']
       try:
-        send_to_mailstand(lead, camp['Mailstand Campaign ID'])
+        send_to_mailstand(lead, camp['fields']['Mailstand Campaign ID'])
         output['new_leads'].append(lead_id)
       except Exception as e:
         print(f'error for lead {lead_id}: {e}')
