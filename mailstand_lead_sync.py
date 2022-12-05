@@ -125,7 +125,7 @@ def main():
     # if there aren't any new leads, skip this campaign. 
     if len(leads) == 0:
       continue 
-    for lead in leads[:10]:
+    for lead in leads:
       lead_id = lead['custom_1']
       try:
         send_to_mailstand(lead, camp['fields']['Mailstand Campaign ID'])
