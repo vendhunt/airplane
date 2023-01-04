@@ -163,7 +163,10 @@ def main(params):
     
     results = []
     for camp in camps:
-        r = search_city(camp)
-        results.append(r)
+        try:
+            r = search_city(camp)
+            results.append(r)
+        except Exception as e:
+            print(f'error for camp:{camp}: {e}')
     
     return results
